@@ -1,0 +1,96 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGBUS (0x7) at pc=0x00007f57f6b9a210, pid=22965, tid=140015781930752
+#
+# JRE version: 6.0_26-b03
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (20.1-b02 mixed mode linux-amd64 compressed oops)
+# Problematic frame:
+# 
+[error occurred during error reporting (printing problematic frame), id 0x7]
+
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f57f00a6000):  JavaThread "AWT-EventQueue-0" [_thread_in_native, id=22985, stack(0x00007f57f6e1e000,0x00007f57f6f1f000)]
+
+siginfo:si_signo=SIGBUS: si_errno=0, si_code=2 (BUS_ADRERR), si_addr=0x00007f57f6b9a210
+
+Registers:
+RAX=0x0000000000000000, RBX=0x0000000000000001, RCX=0x00007f57f6f1ca98, RDX=0x00007f57f6f1ca90
+RSP=0x00007f57f6f1ca88, RBP=0x00007f57f6f1cad0, RSI=0x00007f57f6f1cac0, RDI=0x00007f57f00a61d0
+R8 =0x0000000000000014, R9 =0x0000000000000000, R10=0x00007f57fe0e0189, R11=0x00000000bfc34180
+R12=0x0000000000000000, R13=0x00007f57f6f1cba0, R14=0x00007f57f6f1cac0, R15=0x00007f57f00a6000
+RIP=0x00007f57f6b9a210, EFLAGS=0x0000000000010246, CSGSFS=0x0000000000000033, ERR=0x0000000000000014
+  TRAPNO=0x000000000000000e
+
+Top of Stack: (sp=0x00007f57f6f1ca88)
+0x00007f57f6f1ca88:   00007f57fe0e0203 00000000c4025988
+0x00007f57f6f1ca98:   00000000c400e8d8 00007f57f00a6000
+0x00007f57f6f1caa8:   0000000000000de1 00007f57f00a6000
+0x00007f57f6f1cab8:   00007f57f54f6f11 00000000bfbe6860
+0x00007f57f6f1cac8:   00007f57f54c3808 00000000c400e8d8
+0x00007f57f6f1cad8:   00007f57fe0ed234 00007f57f6f1cb20
+0x00007f57f6f1cae8:   00000000c400f898 0000001400000001
+0x00007f57f6f1caf8:   00000000c400f918 00007f57f6f1cb30
+0x00007f57f6f1cb08:   00007f57f00a61d0 00007f57f6f1cb30
+0x00007f57f6f1cb18:   00000000c400faf0 00007f57f6f1cb70
+0x00007f57f6f1cb28:   00007f57fe0f90de 00000000c400fcc0
+0x00007f57f6f1cb38:   00007f57fe0ec4e0 00000000c400f898
+0x00007f57f6f1cb48:   423c000044480000 4280000042800000
+0x00007f57f6f1cb58:   00007f57f5919ec9 00007f57f6f1cbb0
+0x00007f57f6f1cb68:   00004000bfc3d0d0 00000000c40082f0
+0x00007f57f6f1cb78:   00007f57fe114574 00007f57f6f1cc10
+0x00007f57f6f1cb88:   00007f57fe020a82 00000000c40082e0
+0x00007f57f6f1cb98:   00007f57fe020a82 00007f5742800000
+0x00007f57f6f1cba8:   00007f5742800000 00007f57423c0000
+0x00007f57f6f1cbb8:   00007f5744480000 00000000c400fcc0
+0x00007f57f6f1cbc8:   00000000c400f898 00007f57f6f1cbd0
+0x00007f57f6f1cbd8:   00000000bfc3c8bf 00007f57f6f1cc28
+0x00007f57f6f1cbe8:   00000000bfc3d0d0 00000000bfd60f98
+0x00007f57f6f1cbf8:   00000000bfc3c8f8 00007f57f6f1cba0
+0x00007f57f6f1cc08:   00007f57f6f1cc28 00007f57f6f1cc70
+0x00007f57f6f1cc18:   00007f57fe020a82 00000000c40082e0
+0x00007f57f6f1cc28:   00000000c400f7a0 00007f57f6f1cc30
+0x00007f57f6f1cc38:   00000000bfbd6c1f 00007f57f6f1cc80
+0x00007f57f6f1cc48:   00000000bfbd9c08 00000000bfd606c0
+0x00007f57f6f1cc58:   00000000bfbd6f48 00007f57f6f1cc28
+0x00007f57f6f1cc68:   00007f57f6f1cc80 00007f57f6f1ccc8
+0x00007f57f6f1cc78:   00007f57fe020f5c 00000000c400f238 
+
+Instructions: (pc=0x00007f57f6b9a210)
+0x00007f57f6b9a1f0:   6c 24 30 31 c9 48 8b 80 f8 06 00 00 4c 8b 74 24
+0x00007f57f6b9a200:   38 4c 8b 7c 24 40 48 83 c4 48 ff e0 0f 1f 40 00
+0x00007f57f6b9a210:   48 89 5c 24 d0 48 89 6c 24 d8 48 89 fb 4c 89 64
+0x00007f57f6b9a220:   24 e0 4c 89 6c 24 e8 48 89 d5 4c 89 74 24 f0 4c 
+
+Register to memory mapping:
+
+RAX=0x0000000000000000 is an unknown value
+RBX=0x0000000000000001 is an unknown value
+RCX=0x00007f57f6f1ca98 is pointing into the stack for thread: 0x00007f57f00a6000
+RDX=0x00007f57f6f1ca90 is pointing into the stack for thread: 0x00007f57f00a6000
+RSP=0x00007f57f6f1ca88 is pointing into the stack for thread: 0x00007f57f00a6000
+RBP=0x00007f57f6f1cad0 is pointing into the stack for thread: 0x00007f57f00a6000
+RSI=0x00007f57f6f1cac0 is pointing into the stack for thread: 0x00007f57f00a6000
+RDI=0x00007f57f00a61d0 is an unknown value
+R8 =0x0000000000000014 is an unknown value
+R9 =0x0000000000000000 is an unknown value
+R10=0x00007f57fe0dff90 [CodeBlob (0x00007f57fe0dff90)]
+Framesize: 10
+R11=0x00000000bfc34180 is an oop
+{instance class} 
+ - klass: {other class}
+R12=0x0000000000000000 is an unknown value
+R13=0x00007f57f6f1cba0 is pointing into the stack for thread: 0x00007f57f00a6000
+R14=0x00007f57f6f1cac0 is pointing into the stack for thread: 0x00007f57f00a6000
+R15=0x00007f57f00a6000 is a thread
+
+
+Stack: [0x00007f57f6e1e000,0x00007f57f6f1f000],  sp=0x00007f57f6f1ca88,  free space=1018k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)

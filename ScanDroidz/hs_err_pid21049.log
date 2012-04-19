@@ -1,0 +1,102 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGBUS (0x7) at pc=0x00007f7bc7d7a3a8, pid=21049, tid=140169683613440
+#
+# JRE version: 6.0_26-b03
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (20.1-b02 mixed mode linux-amd64 compressed oops)
+# Problematic frame:
+# 
+[error occurred during error reporting (printing problematic frame), id 0x7]
+
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f7bc8150000):  JavaThread "AWT-EventQueue-0" [_thread_in_native, id=21069, stack(0x00007f7bcc233000,0x00007f7bcc334000)]
+
+siginfo:si_signo=SIGBUS: si_errno=0, si_code=2 (BUS_ADRERR), si_addr=0x00007f7bc7ffc838
+
+Registers:
+RAX=0x00000000c401f8a0, RBX=0x00007f7bc81501d0, RCX=0x00007f7bc8003ac0, RDX=0x0000000000000050
+RSP=0x00007f7bcc331858, RBP=0x00007f7bcc3318a0, RSI=0x00000000c401f8a0, RDI=0x00007f7bc828f000
+R8 =0x00007f7bd4033fe8, R9 =0x00007f7bd4037e58, R10=0x00007f7bc8003ea8, R11=0x00007f7bc8003b08
+R12=0x00000000c401f8a0, R13=0x0000000000000050, R14=0x00007f7bc828f000, R15=0x0000000000000000
+RIP=0x00007f7bc7d7a3a8, EFLAGS=0x0000000000010206, CSGSFS=0x0000000000000033, ERR=0x0000000000000004
+  TRAPNO=0x000000000000000e
+
+Top of Stack: (sp=0x00007f7bcc331858)
+0x00007f7bcc331858:   00007f7bc7d7c277 00007f7bc8150000
+0x00007f7bcc331868:   00000000c401f890 00007f7bcc3318e0
+0x00007f7bcc331878:   0000000000000000 00007f7bcc3319c0
+0x00007f7bcc331888:   00007f7bcc3318d0 00007f7bc8150000
+0x00007f7bcc331898:   00007f7bcf54cd03 00000000c401f890
+0x00007f7bcc3318a8:   00000000c4004988 00007f7bc8150000
+0x00007f7bcc3318b8:   0000000000000000 00007f7bc8150000
+0x00007f7bcc3318c8:   0000000000000de1 00000000bfbe71f0
+0x00007f7bcc3318d8:   00007f7bc68eff11 00000000c4004988
+0x00007f7bcc3318e8:   00007f7bcf55665c 00000000bfc13e40
+0x00007f7bcc3318f8:   00000000c4005a28 0000001400000001
+0x00007f7bcc331908:   00000000c4005aa8 00000000cc331940
+0x00007f7bcc331918:   00007f7bcc331958 00007f7bcc331950
+0x00007f7bcc331928:   00007f7bc81501d0 00007f7bcc331950
+0x00007f7bcc331938:   00000000c4005c80 00007f7bcc331990
+0x00007f7bcc331948:   00007f7bcf56891e 00000000c4005e50
+0x00007f7bcc331958:   00007f7bcf555260 00000000c4005a28
+0x00007f7bcc331968:   423c000044480000 4280000042800000
+0x00007f7bcc331978:   00007f7bc6d12ec9 00007f7bcc3319d0
+0x00007f7bcc331988:   00004000bfc3d730 00000000ed146530
+0x00007f7bcc331998:   00007f7bcf57d5f4 00007f7bcc331a30
+0x00007f7bcc3319a8:   00007f7bcf486a82 00000000c4004120
+0x00007f7bcc3319b8:   00007f7bcf486a82 00007f7b42800000
+0x00007f7bcc3319c8:   00007f7b42800000 00007f7b423c0000
+0x00007f7bcc3319d8:   00007f7b44480000 00000000c4005e50
+0x00007f7bcc3319e8:   00000000c4005a28 00007f7bcc3319f0
+0x00007f7bcc3319f8:   00000000bfc3cfaf 00007f7bcc331a48
+0x00007f7bcc331a08:   00000000bfc3d730 00000000bfd5ae38
+0x00007f7bcc331a18:   00000000bfc3cfe8 00007f7bcc3319c0
+0x00007f7bcc331a28:   00007f7bcc331a48 00007f7bcc331a90
+0x00007f7bcc331a38:   00007f7bcf486a82 00000000c4004120
+0x00007f7bcc331a48:   00000000c4005930 00007f7bcc331a50 
+
+Instructions: (pc=0x00007f7bc7d7a3a8)
+0x00007f7bc7d7a388:   ff 25 9a 24 28 00 68 05 01 00 00 e9 90 ef ff ff
+0x00007f7bc7d7a398:   ff 25 92 24 28 00 68 06 01 00 00 e9 80 ef ff ff
+0x00007f7bc7d7a3a8:   ff 25 8a 24 28 00 68 07 01 00 00 e9 70 ef ff ff
+0x00007f7bc7d7a3b8:   ff 25 82 24 28 00 68 08 01 00 00 e9 60 ef ff ff 
+
+Register to memory mapping:
+
+RAX=0x00000000c401f8a0 is an oop
+[F 
+ - klass: {type array float}
+ - length: 20000
+RBX=0x00007f7bc81501d0 is an unknown value
+RCX=0x00007f7bc8003ac0 is an unknown value
+RDX=0x0000000000000050 is an unknown value
+RSP=0x00007f7bcc331858 is pointing into the stack for thread: 0x00007f7bc8150000
+RBP=0x00007f7bcc3318a0 is pointing into the stack for thread: 0x00007f7bc8150000
+RSI=0x00000000c401f8a0 is an oop
+[F 
+ - klass: {type array float}
+ - length: 20000
+RDI=0x00007f7bc828f000 is an unknown value
+R8 =0x00007f7bd4033fe8: <offset 0xa99fe8> in /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/amd64/server/libjvm.so at 0x00007f7bd359a000
+R9 =0x00007f7bd4037e58: <offset 0xa9de58> in /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/amd64/server/libjvm.so at 0x00007f7bd359a000
+R10=0x00007f7bc8003ea8 is an unknown value
+R11=0x00007f7bc8003b08 is an unknown value
+R12=0x00000000c401f8a0 is an oop
+[F 
+ - klass: {type array float}
+ - length: 20000
+R13=0x0000000000000050 is an unknown value
+R14=0x00007f7bc828f000 is an unknown value
+R15=0x0000000000000000 is an unknown value
+
+
+Stack: [0x00007f7bcc233000,0x00007f7bcc334000],  sp=0x00007f7bcc331858,  free space=1018k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
