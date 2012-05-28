@@ -16,9 +16,9 @@ public class DickMonster extends Creature {
 		
 		// Anything specific to dickmonster creation, LOL
 		this.getSkillList().set(0, new Fireball());
-		this.getSkillList().set(1, new Fireball());
+		this.getSkillList().set(1, new Heal());
 		this.getSkillList().set(2, new Fireball());
-		this.getSkillList().set(3, new Fireball());
+		this.getSkillList().set(3, new Heal());
 
 		this.setActiveHealth(endurance);
 	}

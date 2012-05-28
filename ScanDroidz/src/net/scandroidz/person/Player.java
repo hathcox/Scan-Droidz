@@ -50,7 +50,6 @@ public class Player implements Serializable {
 	private List<HandlerSkill> handlerSkills;
 	
 	private Long seed;
-
 	
 	public Player(String name) throws NoSuchAlgorithmException {
 		super();
@@ -71,6 +70,7 @@ public class Player implements Serializable {
 		this.seed = getRandomSeed();
 		
 	}
+	
 	private Long getRandomSeed() throws NoSuchAlgorithmException {
 		//TODO: Back this up on the server
 		SecureRandom random = SecureRandom.getInstance("SHA1PRNG");

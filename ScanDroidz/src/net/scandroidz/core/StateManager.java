@@ -10,10 +10,9 @@ public class StateManager {
 	private static StateManager stateManagerRef;
 	
 	private State currentState;
-	
 	private Map<String,State> states;
-	
 	private Player player;
+	public boolean renderPaused = false;
 
 	public static StateManager getInstance()
 	{
@@ -62,7 +61,7 @@ public class StateManager {
 	
 	public void render()
 	{
-		if( currentState != null )
+		if( currentState != null  && !renderPaused)
 		{
 			currentState.render();
 		}

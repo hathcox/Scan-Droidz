@@ -49,8 +49,6 @@ public class FlickStick {
     //Font for debugging
     BitmapFont font = new BitmapFont(Gdx.files.internal("data/font16.fnt"), Gdx.files.internal("data/font16.png"), false);
 
-
-    
     /**
      * Flick Stick should take a given Position, Size, and Scale to be created
      * 
@@ -121,7 +119,6 @@ public class FlickStick {
 	       }
     }
 
-    
     /**
      * This method should be called every frame to deal with the graphical display
      * 
@@ -161,18 +158,6 @@ public class FlickStick {
     			findQuadrant(currentTouch);
     			isTouched = true;
     		}
-    		//If they fell out of bounds
-    		/**
-    		 * This is old, and only for testing
-    		 */
-//    		else {
-//    			//innerStickPosition.x = Math.max(Math.min((Gdx.input.getX() - ((size * scale) /4)), outerBounds.x + innerStick.radius), outerBounds.x - innerStick.radius * 3);
-//    			//innerStickPosition.y = Math.max(Math.min((Gdx.graphics.getHeight() - Gdx.input.getY()) - ((size * scale) /4),outerBounds.y + innerStick.radius), outerBounds.y - innerStick.radius * 3);
-//    			//Get their quadrant using bounds
-//    			findQuadrant(new Vector2(Math.max(Math.min(currentTouch.x, innerStick.x+innerStick.radius+innerStick.radius-1),innerStick.x-innerStick.radius-innerStick.radius+1 ), Math.max(Math.min(currentTouch.y, innerStick.y+innerStick.radius+innerStick.radius-1), innerStick.y-innerStick.radius-innerStick.radius+1))     );
-//    		}
-    		
-
     	}
     	else {
     		if(isTouched) {
@@ -200,5 +185,4 @@ public class FlickStick {
 			currentQuadrant = MoveSelection.CLICK;
 		}
 	}
-
 }

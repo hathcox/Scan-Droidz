@@ -1,5 +1,8 @@
 package net.scandroidz.states;
 
+import net.scandroidz.core.State;
+import net.scandroidz.core.StateManager;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -7,50 +10,45 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 
-import net.scandroidz.ScanDroidz;
-import net.scandroidz.core.State;
-import net.scandroidz.core.StateManager;
-import net.scandroidz.creature.DickMonster;
-import net.scandroidz.enums.CreatureEnums.Element;
-import net.scandroidz.enums.CreatureEnums.Stat;
-
 public class MainMenu implements State {
-	private Rectangle play;
-	private Rectangle options;
-	private Rectangle quit;
+	private Rectangle hunt;
+	private Rectangle bestiary;
+	private Rectangle profile;
 	private SpriteBatch spriteBatch;
 	private BitmapFont font;
 	
-	private Texture playButton;
-	private Texture optionsButton;
-	private Texture	exitButton;
+	private Texture huntButton;
+	private Texture bestiaryButton;
+	private Texture	profileButton;
 
+	private boolean switchingState = false;
 	
 	@Override
 	public void startUp() {
-		// TODO Auto-generated method stub
-		play = new Rectangle(Gdx.graphics.getWidth()/4, 
-				Gdx.graphics.getHeight() -  Gdx.graphics.getHeight()/2, 
-				Gdx.graphics.getWidth()/4, 
-				Gdx.graphics.getHeight()/4);
+		hunt = new Rectangle(Gdx.graphics.getWidth()/2, 
+				Gdx.graphics.getHeight() - Gdx.graphics.getHeight()/3, 
+				Gdx.graphics.getWidth()/2, 
+				Gdx.graphics.getHeight()/3);
 		
-		options = new Rectangle(play.x,
-				play.y -  Gdx.graphics.getHeight()/4, 
-				play.width, 
-				play.height);
+		bestiary = new Rectangle(Gdx.graphics.getWidth()/2,
+				Gdx.graphics.getHeight() - ((Gdx.graphics.getHeight()/3)*2),
+				Gdx.graphics.getWidth()/2,
+				Gdx.graphics.getHeight()/3);
 		
-		quit = new Rectangle(options.x,
-				options.y -  Gdx.graphics.getHeight()/4, 
-				options.width, 
-				options.height);
+		profile = new Rectangle(Gdx.graphics.getWidth()/2,
+				Gdx.graphics.getHeight() - ((Gdx.graphics.getHeight()/3)*3),
+				Gdx.graphics.getWidth()/2,
+				Gdx.graphics.getHeight()/3);
 		
 		spriteBatch = new SpriteBatch();
 		font = new BitmapFont(Gdx.files.internal("data/font16.fnt"),
 		         Gdx.files.internal("data/font16.png"), false);
-		playButton = new Texture(Gdx.files.internal("data/playButton.png"));
-		optionsButton = new Texture(Gdx.files.internal("data/optionsButton.png"));
-		exitButton = new Texture(Gdx.files.internal("data/exitButton.png"));
-
+		
+		huntButton = new Texture(Gdx.files.internal("data/playButton.png"));
+		bestiaryButton = new Texture(Gdx.files.internal("data/optionsButton.png"));
+		profileButton = new Texture(Gdx.files.internal("data/exitButton.png"));
+		
+		Gdx.app.log("MainMenu", "Startup");
 	}
 
 	@Override
@@ -61,52 +59,45 @@ public class MainMenu implements State {
 		font.draw(spriteBatch, "MainMenu", 0, Gdx.graphics.getHeight());
 		
 		//Draw buttons
-		spriteBatch.draw(playButton, play.x, play.y, play.width, play.height);
-		spriteBatch.draw(optionsButton, options.x, options.y, options.width, options.height);
-		spriteBatch.draw(exitButton, quit.x, quit.y, quit.width, quit.height);
-		
+		spriteBatch.draw(huntButton, hunt.x, hunt.y, hunt.width, hunt.height);
+		spriteBatch.draw(bestiaryButton, bestiary.x, bestiary.y, bestiary.width, bestiary.height);
+		spriteBatch.draw(profileButton, profile.x, profile.y, profile.width, profile.height);
+
 		spriteBatch.end();
 	}
 
 	@Override
 	public void update(float delta) {
-		// TODO Auto-generated method stub
-		Vector2 currentTouch = new Vector2(Gdx.input.getX(), Gdx.graphics.getHeight() - Gdx.input.getY());
 		if(Gdx.input.justTouched()) {
-			if(play.contains(currentTouch.x, currentTouch.y)) {
-				Gdx.app.log("PlayButton", "Pressed");
-				
-				//Setup with the monsters that matter, for testing I made some bullshit
-				((SinglePlayerBattleState)StateManager.getInstance().getState("SinglePlayerBattleState")).setup(
-						new DickMonster("DickBalls Dragon", 1, 1, 1, 1, 100, 1, Element.DICK, Stat.ONE, Stat.TWO),
-						new DickMonster("Cat", 1, 1, 1, 1, 100, 1, Element.DICK, Stat.ONE, Stat.TWO),
-						new DickMonster("FBGM", 1, 1, 1, 1, 100, 1, Element.DICK, Stat.ONE, Stat.TWO),
-						new DickMonster("Tites", 1, 1, 1, 1, 100, 1, Element.DICK, Stat.ONE, Stat.TWO),
-						new DickMonster("BEER", 1, 1, 1, 1, 100, 1, Element.DICK, Stat.ONE, Stat.TWO),
-						new DickMonster("lololLOLOllOl", 1, 1, 1, 1, 100, 1, Element.DICK, Stat.ONE, Stat.TWO),
-						StateManager.getInstance().getPlayer());
-				StateManager.getInstance().changeState("SinglePlayerBattleState");
-			} 
-			if(options.contains(currentTouch.x, currentTouch.y)) {
-				Gdx.app.log("OptionsButton", "Pressed");
-			} 
-			if(quit.contains(currentTouch.x, currentTouch.y)) {
-				Gdx.app.log("QuitButton", "Pressed");
-				Gdx.app.exit();
-			} 
+			System.out.println("Here!!");
+			Vector2 currentTouch = new Vector2(Gdx.input.getX(), Gdx.graphics.getHeight() - Gdx.input.getY());
+			if(hunt.contains(currentTouch.x, currentTouch.y)) {
+				Gdx.app.log("Hunt", "Pressed");
+				StateManager.getInstance().renderPaused = true;
+				StateManager.getInstance().changeState("Scanning");
+			}
+			else if(bestiary.contains(currentTouch.x, currentTouch.y)) {
+				Gdx.app.log("Bestiary", "Pressed");
+			}
+			else if(profile.contains(currentTouch.x, currentTouch.y)) {
+				Gdx.app.log("Profile", "Pressed");
+			}
 		}
 	}
 
 	@Override
 	public void load() {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public void cleanUp() {
-		// TODO Auto-generated method stub
-		
+		spriteBatch = null;
+		hunt = null;
+		bestiary = null;
+		profile = null;
+		huntButton = null;
+		bestiaryButton = null;
+		profileButton = null;
 	}
 
 }

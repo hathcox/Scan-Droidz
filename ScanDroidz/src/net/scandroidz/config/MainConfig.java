@@ -34,6 +34,8 @@ public class MainConfig {
 		tempMap.put(MoveSelection.SOUTH, 2);
 		tempMap.put(MoveSelection.WEST, 3);
 		tempMap.put(MoveSelection.CLICK, 0);
+		tempMap.put(MoveSelection.NONE, 0);
+		tempMap.put(null, 0);
 		SKILL_DIRECTION_MAP = Collections.unmodifiableMap(tempMap);
 	}
 }
